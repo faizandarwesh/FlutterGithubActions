@@ -70,4 +70,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: test-team
-          file: app/build/outputs/apk/apk-build.apk    
+          file: build/app/outputs/flutter-apk/app-release.apk    
