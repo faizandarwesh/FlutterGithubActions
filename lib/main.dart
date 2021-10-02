@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter CI with Github Actions',
+      title: 'Flutter CI with Github Actions with Upload APK and IPA',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
