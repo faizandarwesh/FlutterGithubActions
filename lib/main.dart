@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter CI CD Path',
+      title: 'Flutter CI CD Paths',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
