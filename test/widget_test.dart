@@ -7,24 +7,29 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:githubactionsflutter/auth/login/login_screen.dart';
 
 import 'package:githubactionsflutter/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('Login Screen smoke test', (WidgetTester tester) async {
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    //finds all widgets that needed
+    final emailTextField = find.byKey(ValueKey("email_field"));
+    final passwordTextField = find.byKey(ValueKey("password_field"));
+    final loginButton = find.byKey(ValueKey("login_button"));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    //execute actual tests
+    await tester.pumpWidget(MaterialApp(home: LoginScreen()));
+    await tester.enterText(emailTextField,"faizan@yopmail.com");
+    await tester.enterText(passwordTextField,"Adobe110#");
+    await tester.tap(loginButton);
+    await tester.pump(); //rebuild the widgets
+    
+    //expects the output
+    expect(find.text("faizan@yopmail.com"),findsOneWidget);
+    expect(find.text("Adobe110#"),findsOneWidget);
+    expect(find.text(""),findsNothing);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
   });
 }
